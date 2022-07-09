@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Quicksand:wght@400;600&display=swap');
+
+$color-01: DarkSlateGrey;
+$color-02: OldLace;
+$color-03: DodgerBlue;
+$color-04: LightSkyBlue;
+$color-05: blue;
+$color-06: SteelBlue;
+
+$color-shadow: rgba(0, 0, 0, 0.3);
+
+@mixin flexconf ($justify: center, $align: center, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+body {
+    background-color: $color-06;
+    @include flexconf();
+    min-height: 100vh;
+}
+
+
+
+.container {
+    width: 380px;
+    background-color: $color-02;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px $color-shadow;
+    @include flexconf($justify: space-between, $direction: column);
+    padding: 2rem;
+    img {
+        width: 64px;
+    }
+    h1 {
+        font-family: 'Quicksand', sans-serif;
+        color: $color-01;
+        font-size: 1rem;
+    }
+    p {
+        font-family: 'Bitter', serif;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .joke {
+        width: 100%;
+        padding: 2rem;
+        min-height: 6rem;
+        text-align: center;
+        color: $color-01;
+    }
+    .btn {
+        background-color: $color-03;
+        border-radius: 5px;
+        color: $color-02;
+        width: 100%;
+        border-style: none;
+        transition: background-color 0.1s;
+        box-shadow: 0 5px 8px $color-shadow;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: {
+            top: 0.9rem;
+            bottom: 0.9rem;
+        }
+        &:hover {
+            background-color: $color-05;
+        }
+        &:active {
+            background-color: $color-04;
+            transform: translateY(2px);
+            box-shadow: 0 2px 3px $color-shadow;
+        }
+    }
+    
+}
